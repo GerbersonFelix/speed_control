@@ -24,13 +24,13 @@ O pacote contém atualmente 7 nós
       * Script File: repetidor.py
       * Subscribers: "/vel_set"
       * Publishers: "/vel_repeat"
-4. **kd_set**: Responsável por receber do usuário o parâmetro diferencial do controle PID utilizado no robô.(Minicooper)
+4. **kd_set**: Responsável por receber do usuário o parâmetro diferencial do controle PID utilizado no robô. (Minicooper)
       * Script File: set_kd.py
       * Publishers: "/kd_set"
-5. **ki_set**: Responsável por receber do usuário o parâmetro integrativo do controle PID utilizado no robô.(Minicooper)
+5. **ki_set**: Responsável por receber do usuário o parâmetro integrativo do controle PID utilizado no robô. (Minicooper)
       * Script File: set_ki.py
       * Publishers: "/ki_set"
-6. **kp_set**: Responsável por receber do usuário o parâmetro proporcional do controle PID utilizado no robô.(Minicooper)
+6. **kp_set**: Responsável por receber do usuário o parâmetro proporcional do controle PID utilizado no robô. (Minicooper)
       * Script File: set_kp.py
       * Publishers: "/kp_set"
 7. **vel_set**: Responsável por receber do usuário a velocidade de referência do robô.(Minicooper)
