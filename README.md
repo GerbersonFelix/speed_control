@@ -33,7 +33,7 @@ O pacote contém atualmente 7 nós
 6. **kp_set**: Responsável por receber do usuário o parâmetro proporcional do controle PID utilizado no robô. (Minicooper)
       * Script File: set_kp.py
       * Publishers: "/kp_set"
-7. **vel_set**: Responsável por receber do usuário a velocidade de referência do robô.(Minicooper)
+7. **vel_set**: Responsável por receber do usuário a velocidade de referência do robô. (Minicooper)
       * Script File: set_vel.py
       * Publishers: "/vel_set"
 
