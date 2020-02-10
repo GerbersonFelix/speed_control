@@ -91,7 +91,7 @@ char motor_d[10];
 //amarelo C1
 //verde C2
 
-///////////////////////////////Variaveiis usadas////////////////////////////////
+///////////////////////////////Variaveis usadas////////////////////////////////
 int vel = 30; //Velocidade do prototipo
 int cmd, stop; // variaveis de comando e de parada
 int ativo;
