@@ -39,7 +39,7 @@ O pacote contém atualmente 7 nós
 
 ### Code arduino
 Código responsável por fazer a leitura dos encoders e enviar os valores de uma vez só para a porta serial. No qual também é responsável por receber os valores de PWM para realizar o controle individual de cada motor.
--     * Script File: main.cpp
+      * Script File: main.cpp
       * Subscribers: "/cmd_vel_A"
 		     "/cmd_vel_B"
 		     "/cmd_vel_C"
