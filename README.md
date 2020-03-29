@@ -20,20 +20,28 @@ O pacote contém atualmente 7 nós
 		    "/ticks_B"
 		    "/ticks_C"
 		    "/ticks_D"
-3. **repeat**: Recebe o valor da velocidade de referência e o publica continuarmente para que esta seja mostrada no gráfico, na qual é comparada com a velocidade lida. (Minicooper)
+3. **listenner_ticks_srv**:Também recebe os valores de pulsos dos encoders do robô e os publica de forma individual a cada encoder, a diferença é que este solicita por meio de um service o envio dos valores. (wally2.0)
+      * Script File: listenner_ticks_srv.py
+      * Subscribers: "/ticks"
+      * Publishers: "/ticks_A"
+		    "/ticks_B"
+		    "/ticks_C"
+		    "/ticks_D"
+      * Service: "/ticks_srv" (client)
+4. **repeat**: Recebe o valor da velocidade de referência e o publica continuarmente para que esta seja mostrada no gráfico, na qual é comparada com a velocidade lida. (Minicooper)
       * Script File: repetidor.py
       * Subscribers: "/vel_set"
       * Publishers: "/vel_repeat"
-4. **kd_set**: Responsável por receber do usuário o parâmetro diferencial do controle PID utilizado no robô. (Minicooper)
+5. **kd_set**: Responsável por receber do usuário o parâmetro diferencial do controle PID utilizado no robô. (Minicooper)
       * Script File: set_kd.py
       * Publishers: "/kd_set"
-5. **ki_set**: Responsável por receber do usuário o parâmetro integrativo do controle PID utilizado no robô. (Minicooper)
+6. **ki_set**: Responsável por receber do usuário o parâmetro integrativo do controle PID utilizado no robô. (Minicooper)
       * Script File: set_ki.py
       * Publishers: "/ki_set"
-6. **kp_set**: Responsável por receber do usuário o parâmetro proporcional do controle PID utilizado no robô. (Minicooper)
+7. **kp_set**: Responsável por receber do usuário o parâmetro proporcional do controle PID utilizado no robô. (Minicooper)
       * Script File: set_kp.py
       * Publishers: "/kp_set"
-7. **vel_set**: Responsável por receber do usuário a velocidade de referência do robô. (Minicooper)
+8. **vel_set**: Responsável por receber do usuário a velocidade de referência do robô. (Minicooper)
       * Script File: set_vel.py
       * Publishers: "/vel_set"
 
@@ -45,6 +53,15 @@ Código responsável por fazer a leitura dos encoders e enviar os valores de uma
  		"/cmd_vel_C"
 	        "/cmd_vel_D"
 * Publishers: "/ticks"
+
+Código responsável por fazer a leitura dos encoders e enviar os valores de uma vez só para a porta serial. No qual também é responsável por receber os valores de PWM para realizar o controle individual de cada motor, como também recebe a "permissão" através de um service de que pode publicar os valores de leitura dos encoders.
+* Script File: WallyV2.ino
+* Subscribers:  "/cmd_vel_A"
+	        "/cmd_vel_B"
+ 		"/cmd_vel_C"
+	        "/cmd_vel_D"
+* Publishers: "/ticks"
+* Service: "/ticks_srv" (server)
 		        
 ### Passos para usar os nós
 #### Passo1: Instale o pacote
